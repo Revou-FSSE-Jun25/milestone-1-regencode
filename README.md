@@ -7,7 +7,7 @@ The style of the website is minimalist and designed to be easy to read.
 
 Currently deployed on GitHub Pages, but planning to deploy with custom domain after website is complete.
 
-**[Website Link](https://revou-fsse-jun25.github.io/milestone-1-regencode/)**
+**[Website Link](https://revou-fsse-jun25.github.io/milestone-1-regencode/){:target="_blank"}**
 
 ## Website sections
 

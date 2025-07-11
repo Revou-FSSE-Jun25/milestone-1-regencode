@@ -8,7 +8,7 @@ Tech Stack:
 
 TODO:
 
-- [v] - Add info
+- [x] - Add info
 
 - [ ] - Add pictures
 

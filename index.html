@@ -11,21 +11,23 @@
         <link rel="manifest" href="resources/favicons/site.webmanifest">
     </head>
     <body>
-        <section id="about-me">
-            <h1> Thomas Gozalie </h1>
-            <img src="resources/profile.jpg" alt="profile-picture">
-            <h2> About Me </h2>
-            <p>Learning to Code. Currently doing Computer Vision research. </p>
-            <ul>
-                <li> <a href="https://github.com/regencode" target="_blank"> GitHub </a> </li>
-                <li> <a href="https://www.linkedin.com/in/thomas-gozalie-926b012a6/" target="_blank"> LinkedIn </a> </li>
-            </ul>
-        </section>
-        <hr>
-        <section id="Projects">
-            <h1> Projects </h1>
-            <p>
+        <header>
+        </header>
+        <main>
+            <section id="about-me">
+                <h1> Thomas Gozalie </h1>
+                <img src="resources/profile.jpg" alt="profile-picture">
+                <h2> About Me </h2>
+                <p>Learning to Code. Currently doing Computer Vision research. </p>
                 <ul>
+                    <li> <a href="https://github.com/regencode" target="_blank"> GitHub </a> </li>
+                    <li> <a href="https://www.linkedin.com/in/thomas-gozalie-926b012a6/" target="_blank"> LinkedIn </a> </li>
+                </ul>
+            </section>
+            <hr>
+            <section id="Projects">
+                <h1> Projects </h1>
+                <dl>
                     <dt> Pytanks </dt>
                     <dd> 
                         2D shooter game made using pygame. 
@@ -41,26 +43,26 @@
                         Password Manager website.
                         <a href="https://github.com/regencode/PassGet">GitHub</a>
                     </dd>
-                </ul>
-            </p>
-        </section>
-        <hr>
-        <section id="message-form">
-            <h1> Contact me: </h1>
-            <form action="./index.html" method=get>
-                <label for="name">Name</label><br>
-                <input id="name" name="name" type="text" placeholder="Enter your name here..." required=true>
-                <br><br>
-                <label for="email">Email</label><br>
-                <input id="email" name="email" type="text" placeholder="Enter your password here..." required=true>
-                <br><br>
-                <label for="message">Message</label><br>
-                <input id="message" name="message" type="text"  placeholder="Enter your message here..." required=true>
-                <br><br>
-                <input type="submit" value="Submit">
-            </form>
-        </section>
-        <hr>
+                </dl>
+            </section>
+            <hr>
+            <section id="message-form">
+                <h1> Contact me: </h1>
+                <form action="./index.html" method=get>
+                    <label for="name">Name</label><br>
+                    <input id="name" name="name" type="text" placeholder="Enter your name here..." required=true>
+                    <br><br>
+                    <label for="email">Email</label><br>
+                    <input id="email" name="email" type="email" placeholder="Enter your password here..." required=true>
+                    <br><br>
+                    <label for="message">Message</label><br>
+                    <input id="message" name="message" type="text"  placeholder="Enter your message here..." required=true>
+                    <br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+            <hr>
+        </main>
         <footer>
             &copy;  2025
         </footer>

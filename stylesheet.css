@@ -201,7 +201,7 @@ header #mobile-nav a {
 
     transition: background-color 0.2s ease-in-out;
 
-    font-size: 60px;
+    font-size: 40px;
 }
 
 header #mobile-nav a:hover {

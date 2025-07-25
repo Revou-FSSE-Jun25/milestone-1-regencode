@@ -56,13 +56,11 @@ section {
     scroll-snap-align: start;
     display: flex;
     position: relative;
-    width: 100vw;
+    width: 90vw;
     height: 100vh;
     padding: 0 5vw;
 
     overflow-x: hidden;
-
-    align-items: center;
 
 }
 
@@ -94,7 +92,7 @@ header h1 {
 
 nav {
     display: flex;
-    width: fit-content;
+    width: 90vw;
 
     height: 100%;
 
@@ -105,14 +103,14 @@ nav {
 
 nav a {
     display: flex;
-    width: 20vw;
     height: 100%;
+    width: 30vw;
 
     align-items: center;
     justify-content: center;
 
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
 
     transition: background-color 0.2s;
     transition-timing-function: ease-in-out;
@@ -156,3 +154,55 @@ nav a {
 }
 
 /* hero section end */
+
+
+/* about me section */
+
+#about-me {
+    display: block;
+}
+
+#about-me h1 {
+    margin-top: var(--header-height); 
+    margin: 0, 0;
+    text-align: center;
+}
+
+#profile-picture {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: auto auto;
+    border-radius: 100px;
+    border: 2px solid rgba(0, 0, 0, 0.45);
+}
+
+#about-me p {
+    margin: 0, 0;
+    text-align: center;
+}
+
+/* about me section end */
+
+/* project section */
+
+#projects {
+    display: block;
+}
+
+#projects h1 {
+    margin-top: var(--header-height);
+}
+/* project section end */
+
+/* contact-me section */
+
+#contact-me {
+    display: block;
+}
+
+#contact-me h1 {
+    margin-top: var(--header-height);
+}
+
+/* contact-me section end */

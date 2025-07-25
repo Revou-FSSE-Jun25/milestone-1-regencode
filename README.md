@@ -3,13 +3,37 @@
 ## Overview
 
 This is my personal website where I showcase my projects.
-The style of the website is minimalist and designed to be easy to read.
-
-Currently deployed on GitHub Pages, but planning to deploy with custom domain after website is complete.
-
 <a target="_blank" href="https://revou-fsse-jun25.github.io/milestone-1-regencode/">
     Website Link
 <a>
+
+### Styling
+The style of the website is minimalist and simple, where the main colors are gray and black.
+Additionally, the website utilizes parallax effect for a sense of 3d-ness by combining 
+CSS's perspective attribute and translateZ to push the grid background into the z-plane,
+Glassy-looking divs/sections are used which emphasizes this parallax effect even more.
+
+### Font usage
+This website uses two fonts, Gothic and Roboto. Gothic is used for emphasis
+and heading, while Roboto is used for normal text.
+
+### Flexbox usage
+Flexbox is used responsively in "My Projects" section, where in mobile the
+flex-direction is column, which places the image below the text. On larger screens
+the flex-direction is row which places text and image side-by-side.
+nth-of-child(even) pseudo element is used in order to reverse the flex-direction row
+on even list indexes.
+
+### Grid usage
+Grid is used for the "Socials" sub-section in "Contact Me" section, where the grid
+layout changes according to the device width:
+- If device width<400px, grid is 6x1. (row x col)
+- else if device width >= 400px but width < 600px, grid is 3x2.
+- else if width >= 600px, grid is 2x3.
+
+### Deployment
+Currently deployed on GitHub Pages, but planning to deploy with custom domain after website is complete.
+
 
 ## Website sections
 
@@ -21,6 +45,7 @@ Shows the projects I have developed and GitHub links to each project.
 
 ### Contact
 Provides viewers a way to contact me through email by filling out the form and submitting.
+I also provided my contacts for people to contact me through other methods.
 
 ## Features Implemented:
 
@@ -28,7 +53,7 @@ Provides viewers a way to contact me through email by filling out the form and s
 
 - [ ] - Add pictures
 
-- [ ] - Styling 
+- [x] - Styling 
 
 
 ## Tech Stack:

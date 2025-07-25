@@ -9,17 +9,19 @@
         <meta name="keywords" content="Portfolio, Projects, Profile">
         <meta name="author" content="Thomas Gozalie">
         <!-- /Meta Tags -->
+
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
         <link rel="manifest" href="resources/favicons/site.webmanifest">
         <!-- /Favicon -->
-        <link rel="stylesheet" href="stylesheet.css">
 
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-        <!-- /Font -->
+
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="stylesheet.css">
 
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -27,11 +29,19 @@
     <body>
         <header>
             <!-- Navigation bar -->
-            <h1>regencode</h1>
-            <nav class="gothic-font">
+            <h1 class="glassy-section">regencode</h1>
+            <nav id="desktop-nav" class="gothic-font glassy-section">
                 <a href="#about-me">About Me</a>
-                <a href="#projects">Projects</a>
+                <a href="#projects">My Projects</a>
                 <a href="#contact-me">Contact Me</a>
+            </nav>
+            <button id="hamburger-button" class="glassy-section">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav id="mobile-nav" class="gothic-font blurry-section">
+                <a class="mobile-a" href="#about-me">About Me</a>
+                <a class="mobile-a" href="#projects">My Projects</a>
+                <a class="mobile-a" href="#contact-me">Contact Me</a>
             </nav>
             <!-- /Navigation bar -->
         </header>
@@ -41,6 +51,9 @@
                 <div>
                     <h2> Hello 👋</h2>
                     <h1> I'm <span class="gothic-font"> Thomas Gozalie. </span> </h1>
+                    <h3> 
+                        <🏠> Welcome to my personal webpage!
+                    </h3>
                 </div>
             </section>
             <section id="about-me">
@@ -63,24 +76,39 @@
                 </div>
             </section>
             <section id="projects">
-                <h1 class="gothic-font"> Projects </h1>
-                <dl>
-                    <dt> Pytanks </dt>
-                    <dd> 
-                        2D shooter game made using pygame. 
-                        <a target="_blank" href="https://github.com/regencode/Pytanks">GitHub</a>
-                    </dd>
-                    <dt> Newsflash </dt>
-                    <dd> 
-                        News app with AI summarization capability. 
-                        <a target="_blank" href="https://github.com/regencode/Newsflash">GitHub</a>
-                    </dd>
-                    <dt> PassGet </dt>
-                    <dd> 
-                        Password Manager website.
-                        <a target="_blank" href="https://github.com/regencode/PassGet">GitHub</a>
-                    </dd>
-                </dl>
+                <h1 class="gothic-font"> My Projects </h1>
+                <ul>
+                    <li class="glassy-section"> 
+                        <h2 class="gothic-font"> Pytanks </h2>
+                        <a class="social-button github" target="_blank" href="https://github.com/regencode/Pytanks">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <p>
+                            2D shooter game made using pygame. 
+                        </p>
+                        <img src="https://picsum.photos/500/300" alt="Random placeholder">
+                    </li>
+                    <li class="glassy-section">
+                        <h2 class="gothic-font"> Newsflash </h2>
+                        <a class="social-button github" target="_blank" href="https://github.com/regencode/Newsflash">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <p>
+                            News app with AI summarization capability.
+                        </p>
+                        <img src="https://picsum.photos/500/300" alt="Random placeholder">
+                    </li>
+                    <li class="glassy-section">
+                        <h2 class="gothic-font"> PassGet </h2>
+                        <a class="social-button github target="_blank" href="https://github.com/regencode/PassGet">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <p>
+                            Password Manager website.
+                        </p>
+                        <img src="https://picsum.photos/500/300" alt="Random placeholder">
+                    </li>
+                </ul>
             </section>
             <section id="contact-me">
                 <h1 class="gothic-font"> Contact me: </h1>
@@ -101,6 +129,25 @@
         <footer>
         </footer>
         <script>
+            const hamburger = document.getElementById("hamburger-button");
+            const mobile_nav = document.getElementById("mobile-nav");
+            const mobile_a = document.querySelectorAll(".mobile-a");
+
+            hamburger.addEventListener("click", () => {
+                if (mobile_nav.style.display == "none"){
+                    mobile_nav.style.display = "flex";
+                }
+                else {
+                    mobile_nav.style.display = "none";
+                }
+            });
+
+            mobile_a.forEach(button => {
+                button.addEventListener("click", () => {
+                    mobile_nav.style.display = "none";
+                });
+            });
+
             const skills_elem = document.getElementById("skills");
 
             skills_elem.addEventListener("mousemove", (e) => {
@@ -113,6 +160,7 @@
 
             skills_elem.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
+
             skills_elem.addEventListener("mouseleave", () => {
                 skills_elem.style.transform = `rotateX(0deg) rotateY(0deg)`;
             });

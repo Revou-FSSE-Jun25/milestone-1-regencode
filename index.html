@@ -20,6 +20,9 @@
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
         <!-- /Font -->
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -44,10 +47,20 @@
                 <h1 class="gothic-font"> About Me </h1>
                 <img id="profile-picture" src="resources/profile.jpg" alt="profile picture">
                 <p> Learning to Code. Currently doing Computer Vision research. </p>
-                <ul>
-                    <li> <a href="https://github.com/regencode" target="_blank"> GitHub </a> </li>
-                    <li> <a href="https://www.linkedin.com/in/thomas-gozalie-926b012a6/" target="_blank"> LinkedIn </a> </li>
-                </ul>
+                <nav>
+                    <a class="social-button github" href="https://github.com/regencode" target="_blank">
+                       <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a class="social-button linkedin" href="https://www.linkedin.com/in/thomas-gozalie-926b012a6/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn 
+                    </a>
+                </nav>
+                <div id="skills" class="glassy-section">
+                    <h2 class="gothic-font">Skills</h2>
+                </div>
+                <div id="interests" class="glassy-section">
+                    <h2 class="gothic-font">Interests</h2>
+                </div>
             </section>
             <section id="projects">
                 <h1 class="gothic-font"> Projects </h1>
@@ -87,6 +100,39 @@
         </main>
         <footer>
         </footer>
+        <script>
+            const skills_elem = document.getElementById("skills");
+
+            skills_elem.addEventListener("mousemove", (e) => {
+                const rect = skills_elem.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                const rotateX = -y * 20; // invert Y so up tilts back
+                const rotateY = x * 20;
+
+            skills_elem.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            skills_elem.addEventListener("mouseleave", () => {
+                skills_elem.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            });
+
+            const interests_elem = document.getElementById("interests");
+
+            interests_elem.addEventListener("mousemove", (e) => {
+                const rect = interests_elem.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                const rotateX = -y * 20; // invert Y so up tilts back
+                const rotateY = x * 20;
+
+            interests_elem.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            interests_elem.addEventListener("mouseleave", () => {
+                interests_elem.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            });
+        </script>
     </body>
 </html>
 

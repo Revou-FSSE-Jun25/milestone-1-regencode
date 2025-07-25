@@ -5,6 +5,8 @@
     --accent-color: #FFB347
     --cta-color: #0EA5E9;
     --detail-color: #355C7D;
+
+    --blur-px: 2px;
 }
 
 .roboto-font {
@@ -21,6 +23,38 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.glassy-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(var(--blur-px));
+    -webkit-backdrop-filter: blur(var(--blur-px));
+    color: var(--text-color);
+
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+    perspective: 10px;
+}
+
+.social-button {
+    width: 100px;
+    padding: 5px auto;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.github {
+    color: white;
+    text-decoration: none;
+    background-color: black;
+}
+.linkedin {
+    color: white;
+    text-decoration: none;
+    background-color: #0072b1;
+}
+
 
 body {
     margin: 0 0;
@@ -90,7 +124,7 @@ header h1 {
     display: none;
 }
 
-nav {
+header nav {
     display: flex;
     width: 90vw;
 
@@ -101,7 +135,7 @@ nav {
 }
 
 
-nav a {
+header nav a {
     display: flex;
     height: 100%;
     width: 30vw;
@@ -114,10 +148,12 @@ nav a {
 
     transition: background-color 0.2s;
     transition-timing-function: ease-in-out;
+
+    font-size: 15px;
 }
 
 
- nav a:hover {
+ header nav a:hover {
     background-color: rgb(0, 0, 0, 0.25);
 }
 
@@ -182,6 +218,28 @@ nav a {
     text-align: center;
 }
 
+#about-me #skills {
+    width: 80vw;
+    height: 20vh;
+    text-align: center;
+    margin: 2vh auto;
+}
+
+#about-me #interests {
+    width: 80vw;
+    height: 20vh;
+    text-align: center;
+    margin: 2vh auto;
+}
+
+#about-me nav {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
 /* about me section end */
 
 /* project section */
@@ -192,7 +250,9 @@ nav a {
 
 #projects h1 {
     margin-top: var(--header-height);
+    text-align: center;
 }
+
 /* project section end */
 
 /* contact-me section */

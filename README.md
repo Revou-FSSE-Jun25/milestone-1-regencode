@@ -60,6 +60,15 @@ I also provided my contacts for people to contact me through other methods.
 - HTML/CSS
 - Vanilla JS
 
+## AI Usage
+
+AI helped in implementation of div panning design and parallax style,
+however I still try to understand the implementation.
+AI also helped in resolving various random issue such as "why does this section 
+has left margin for no reason" 
+Overall, I think AI is beneficial for the creation of this project, and also my own
+learning.
+
 
 ## Deadline:
 

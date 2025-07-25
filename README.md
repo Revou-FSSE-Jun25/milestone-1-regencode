@@ -17,6 +17,12 @@ Glassy-looking divs/sections are used which emphasizes this parallax effect even
 This website uses two fonts, Gothic and Roboto. Gothic is used for emphasis
 and heading, while Roboto is used for normal text.
 
+### Responsiveness of website
+
+I made breakpoint for width>=600px for various things such as the navigation header
+(hamburger becomes nav header), "My Projects" flexbox section and "Socials" grid section.
+to ensure the best comfort in reading for various mobile device and desktop.
+
 ### Flexbox usage
 Flexbox is used responsively in "My Projects" section, where in mobile the
 flex-direction is column, which places the image below the text. On larger screens
@@ -68,7 +74,6 @@ AI also helped in resolving various random issue such as "why does this section
 has left margin for no reason" 
 Overall, I think AI is beneficial for the creation of this project, and also my own
 learning.
-
 
 ## Deadline:
 

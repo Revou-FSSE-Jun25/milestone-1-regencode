@@ -14,6 +14,14 @@ li {
     list-style-type: none;
 }
 
+.red {
+    color: red;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
 .roboto-font {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -113,8 +121,7 @@ section {
     position: relative;
     width: 90vw;
     height: 100vh;
-    padding: 0 5vw;
-
+    margin: 0 auto;
     overflow-x: hidden;
 
 }
@@ -263,11 +270,9 @@ header #desktop-nav {
 #hero {
     display: flex;
     position: relative;
-    width: 100vw;
+    width: 90vw;
     height: 100vh;
 
-    right: 0;
-    left: 0;
 
     align-items: center;
 
@@ -355,16 +360,20 @@ header #desktop-nav {
 #projects ul {
     display: flex;
     height: 100vh;
+    width: 100%;
+    padding: 0;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
+
 
 #projects li {
     display: flex;
     flex-grow: 2;
     flex-direction: column;
 
-    width: 70vw;
+    width: 60vw;
     padding: 10px 5vw;
     margin: 2vh auto;
 
@@ -405,11 +414,53 @@ header #desktop-nav {
 /* contact-me section */
 
 #contact-me {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #contact-me h1 {
     margin-top: var(--header-height);
 }
+
+#contact-form {
+    padding: 10px 5vw;
+    justify-content: center;
+}
+
+#socials {
+    padding: 10px 5vw;
+    align-items: center;
+}
+
+#social-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+#social-grid div {
+    font-size: 12px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 599px) {
+    #social-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px)  {
+    #social-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+    }
+}
+
 
 /* contact-me section end */

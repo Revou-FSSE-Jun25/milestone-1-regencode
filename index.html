@@ -50,9 +50,9 @@
             <section id="hero" class="roboto-font">
                 <div>
                     <h2> Hello 👋</h2>
-                    <h1> I'm <span class="gothic-font"> Thomas Gozalie. </span> </h1>
+                    <h1> I'm <span class="gothic-font red"> Thomas Gozalie</span><span class="gothic-font">.</span> </h1>
                     <h3> 
-                        <🏠> Welcome to my personal webpage!
+                        <🏠> Welcome to <span class="underline"> my personal webpage! </span>
                     </h3>
                 </div>
             </section>
@@ -68,17 +68,17 @@
                         <i class="fab fa-linkedin"></i> LinkedIn 
                     </a>
                 </nav>
-                <div id="skills" class="glassy-section">
+                <div id="skills" class="glassy-section pannable">
                     <h2 class="gothic-font">Skills</h2>
                 </div>
-                <div id="interests" class="glassy-section">
+                <div id="interests" class="glassy-section pannable">
                     <h2 class="gothic-font">Interests</h2>
                 </div>
             </section>
             <section id="projects">
                 <h1 class="gothic-font"> My Projects </h1>
                 <ul>
-                    <li class="glassy-section"> 
+                    <li class="glassy-section pannable"> 
                         <div class="project-description">
                             <h2 class="gothic-font"> Pytanks </h2>
                             <a class="social-button github" target="_blank" href="https://github.com/regencode/Pytanks">
@@ -90,7 +90,7 @@
                         </div>
                         <img src="https://picsum.photos/250/150" alt="Random placeholder">
                     </li>
-                    <li class="glassy-section">
+                    <li class="glassy-section pannable">
                         <div class="project-description">
                             <h2 class="gothic-font"> Newsflash </h2>
                             <a class="social-button github" target="_blank" href="https://github.com/regencode/Newsflash">
@@ -102,7 +102,7 @@
                         </div>
                         <img src="https://picsum.photos/250/150" alt="Random placeholder">
                     </li>
-                    <li class="glassy-section">
+                    <li class="glassy-section pannable">
                         <div class="project-description">
                             <h2 class="gothic-font"> PassGet </h2>
                             <a class="social-button github target="_blank" href="https://github.com/regencode/PassGet">
@@ -118,7 +118,7 @@
             </section>
             <section id="contact-me">
                 <h1 class="gothic-font"> Contact me: </h1>
-                <form action="./index.html" method=get>
+                <form id="contact-form" class="glassy-section" action="./index.html" method=get>
                     <label for="name">Name</label><br>
                     <input id="name" name="name" type="text" placeholder="Enter your name here..." required=true>
                     <br><br>
@@ -130,6 +130,25 @@
                     <br><br>
                     <input type="submit" value="Submit">
                 </form>
+                <div id="socials" class="glassy-section">
+                    <h2>Socials</h2>
+                    <div id="social-grid">
+                        <div>
+                            <i class="fa-solid fa-envelope"></i> thomgozalie@gmail.com
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-phone"></i> +62-123-456-789
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-discord"></i> raingen
+                        </div>
+                        <div><i class="fa-brands fa-line"></i> thomasgozalie 
+                        </div>
+                        <div><i class="fa-brands fa-square-instagram"></i> placeholder
+                        </div>
+                        <div><i class="fa-brands fa-github"></i> regencode </div>
+                    </div>
+                </div>
             </section>
         </main>
         <footer>
@@ -138,6 +157,7 @@
             const hamburger = document.getElementById("hamburger-button");
             const mobile_nav = document.getElementById("mobile-nav");
             const mobile_a = document.querySelectorAll(".mobile-a");
+            const pannable = document.querySelectorAll(".pannable");
 
             hamburger.addEventListener("click", () => {
                 if (mobile_nav.style.display == "none"){
@@ -154,37 +174,19 @@
                 });
             });
 
-            const skills_elem = document.getElementById("skills");
+            pannable.forEach(elem => {
+                elem.addEventListener("mousemove", (e) => {
+                    const rect = elem.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-            skills_elem.addEventListener("mousemove", (e) => {
-                const rect = skills_elem.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-                const rotateX = -y * 20; // invert Y so up tilts back
-                const rotateY = x * 20;
-
-            skills_elem.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-
-            skills_elem.addEventListener("mouseleave", () => {
-                skills_elem.style.transform = `rotateX(0deg) rotateY(0deg)`;
-            });
-
-            const interests_elem = document.getElementById("interests");
-
-            interests_elem.addEventListener("mousemove", (e) => {
-                const rect = interests_elem.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-                const rotateX = -y * 20; // invert Y so up tilts back
-                const rotateY = x * 20;
-
-            interests_elem.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-            interests_elem.addEventListener("mouseleave", () => {
-                interests_elem.style.transform = `rotateX(0deg) rotateY(0deg)`;
+                    const rotateX = -y * 20; // invert Y so up tilts back
+                    const rotateY = x * 20;
+                    elem.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+                elem.addEventListener("mouseleave", (e) => {
+                    elem.style.transform = `rotateX(0deg) rotateY(0deg)`;
+                });
             });
         </script>
     </body>
